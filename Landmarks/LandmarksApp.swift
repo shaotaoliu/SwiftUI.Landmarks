@@ -8,6 +8,9 @@ struct LandmarksApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(modelData)
+                .onAppear {
+                    UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+                }
         }
     }
 }
